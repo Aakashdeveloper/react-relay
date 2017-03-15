@@ -1,12 +1,12 @@
-module.exports = {
-  entry: "./js/app.js",
-  output: {
-    path: __dirname + "/public",
+module.exports={
+  entry:"./public/js/app.js",
+  output:{
+    path: __dirname +"/public",
     filename: "bundle.js"
-  }
-  module: {
-    loaders: [
-      { test: /\.js$/, loader: 'babel-loader' }
+  },
+  module:{
+    loaders:[
+        {test:/\.js$/,loader:'babel-loader'}
     ]
   }
 };

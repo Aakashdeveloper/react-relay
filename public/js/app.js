@@ -1,9 +1,5 @@
-var React = require('react');
-var ReactDom = require('react-dom');
-var Hello = React.createClass({
-	render:function(){
-		return React.createElement("h3", null, "hello react");
-	}
-});
+import React from 'react';
+import ReactDom from 'react-dom';
 
-ReactDom.render(React.createElement(Hello),document.getElementById('react'));
+import Hello from "./components/Hello"
+ReactDom.render(<Hello />, document.getElementById('react'))
