@@ -18,8 +18,6 @@ if(a=10){
 
 //Concat the value
 var a ="react"
-
-
 var b = "i am learning ${a}"
 
 //Object assignment

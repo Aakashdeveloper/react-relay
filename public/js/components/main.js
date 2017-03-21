@@ -1,8 +1,14 @@
 import React from "react";
+import API from "../API";
 
-export default class Main extends React.component{
+export default class Main extends React.Component{
+	//componentWillMount
+	componentDidMount(){
+		API.fetchLinks();
+	}
+
 	render(){
-		return 
+		return (
 			<div>
 				<h3>Hello aakash </h3>
 				<ul>
@@ -10,5 +16,6 @@ export default class Main extends React.component{
 					<li> mango</li>
 				</ul>
 			</div>
+			)
 	}
 }
