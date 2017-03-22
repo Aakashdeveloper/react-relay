@@ -1,10 +1,28 @@
 import React from "react";
 import API from "../API";
 
+let _getAppSate = () =>{
+	return {links: LinkStore.getAll()}
+};
+
 export default class Main extends React.Component{
-	//componentWillMount
+	//componentWillMountuctor
+
+	constructor(props){
+		super(props);
+
+		this.state= _getAppSate()
+	}
 	componentDidMount(){
 		API.fetchLinks();
+		LinkStore.on("change",this.onChange)
+	}
+	componentWillUnmount{
+		LinkStore.removeLister("change", this.onChange);
+	}
+	onChange(){
+		console.log("4. in the view")
+		this.setState(_getAppSate())
 	}
 
 	render(){
@@ -12,8 +30,7 @@ export default class Main extends React.Component{
 			<div>
 				<h3>Hello aakash </h3>
 				<ul>
-					<li>Apple</li>
-					<li> mango</li>
+					{contents}
 				</ul>
 			</div>
 			)
