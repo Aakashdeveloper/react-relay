@@ -1,6 +1,6 @@
 import AppDispatcher from "../AppDispatcher";
 import {ActionTypes} from "../Constants";
-import {EventEmitter} from "../events";
+import {EventEmitter} from "events";
 
 let _links = [];
 class LinkStore extends EventEmitter{
@@ -9,13 +9,13 @@ class LinkStore extends EventEmitter{
 
 		AppDispatcher.register(action =>{
 			switch(action.actionsType){
-				case ActionTypes.RECEIVE_LINKS;
+				case ActionTypes.RECEIVE_LINKS:
 				_links = action.links;
 				this.emit("change");
 				break;
-			 default;
+			 default:
 			}
-		})
+		});
 	}
 
 	getAll(){

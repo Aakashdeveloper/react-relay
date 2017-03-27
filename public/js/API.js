@@ -6,7 +6,7 @@ let API ={
 		console.log("i am from api");
 		get("/data/links").done(resp=>{
 			ServerActions.receiveLinks(resp);
-		})
+		});
 	}
 };
 
